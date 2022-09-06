@@ -14,7 +14,7 @@ type HttpRequest struct {
 }
 
 // Request make a request
-func (hr *HttpRequest) Request(method string, url string, body io.Reader, args ...any) *HttpRequest {
+func (hr *HttpRequest) Request(method string, url string, body io.Reader, args ...interface{}) *HttpRequest {
 	req, err := http.NewRequest(method, url, body)
 	if err != nil {
 		hr.Error = err
@@ -34,7 +34,7 @@ func (hr *HttpRequest) Request(method string, url string, body io.Reader, args .
 }
 
 // ParseJson Parse the return value into json format
-func (hr *HttpRequest) ParseJson(payload any) error {
+func (hr *HttpRequest) ParseJson(payload interface{}) error {
 	bytes, err := hr.ParseBytes()
 	if err != nil {
 		return err

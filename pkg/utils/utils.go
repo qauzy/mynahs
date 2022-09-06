@@ -10,7 +10,7 @@ import (
 )
 
 // If 模拟简单的三元操作
-func If(condition bool, trueVal, falseVal any) any {
+func If(condition bool, trueVal, falseVal interface{}) any {
 	if condition {
 		return trueVal
 	}
