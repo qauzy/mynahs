@@ -34,7 +34,7 @@ func Resp() *Response {
 }
 
 // Fail 错误返回
-func (r *Response) Fail(c *gin.Context, code int, msg string, data ...any) {
+func (r *Response) Fail(c *gin.Context, code int, msg string, data ...interface{}) {
 	r.SetCode(code)
 	r.SetMessage(msg)
 	if data != nil {
@@ -78,11 +78,11 @@ func (r *Response) SetHttpCode(code int) *Response {
 }
 
 type defaultRes struct {
-	Result any `json:"result"`
+	Result interface{} `json:"result"`
 }
 
 // WithData 设置返回data数据
-func (r *Response) WithData(data any) *Response {
+func (r *Response) WithData(data interface{}) *Response {
 	switch data.(type) {
 	case string, int, bool:
 		r.result.Data = &defaultRes{Result: data}
@@ -115,7 +115,7 @@ func (r *Response) json(c *gin.Context) {
 }
 
 // Success 业务成功响应
-func Success(c *gin.Context, data ...any) {
+func Success(c *gin.Context, data ...interface{}) {
 	if data != nil {
 		Resp().WithDataSuccess(c, data[0])
 		return
@@ -124,7 +124,7 @@ func Success(c *gin.Context, data ...any) {
 }
 
 // FailCode 业务失败响应
-func FailCode(c *gin.Context, code int, data ...any) {
+func FailCode(c *gin.Context, code int, data ...interface{}) {
 	if data != nil {
 		Resp().WithData(data[0]).FailCode(c, code)
 		return
@@ -133,7 +133,7 @@ func FailCode(c *gin.Context, code int, data ...any) {
 }
 
 // Fail 业务失败响应
-func Fail(c *gin.Context, code int, message string, data ...any) {
+func Fail(c *gin.Context, code int, message string, data ...interface{}) {
 	if data != nil {
 		Resp().WithData(data[0]).FailCode(c, code, message)
 		return

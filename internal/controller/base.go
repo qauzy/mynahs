@@ -13,7 +13,7 @@ type Api struct {
 }
 
 // Success 业务成功响应
-func (api *Api) Success(c *gin.Context, data ...any) {
+func (api *Api) Success(c *gin.Context, data ...interface{}) {
 	response := r.Resp()
 	if data != nil {
 		response.WithDataSuccess(c, data[0])
@@ -23,7 +23,7 @@ func (api *Api) Success(c *gin.Context, data ...any) {
 }
 
 // FailCode 业务失败响应
-func (api *Api) FailCode(c *gin.Context, code int, data ...any) {
+func (api *Api) FailCode(c *gin.Context, code int, data ...interface{}) {
 	response := r.Resp()
 	if data != nil {
 		response.WithData(data[0]).FailCode(c, code)
@@ -33,7 +33,7 @@ func (api *Api) FailCode(c *gin.Context, code int, data ...any) {
 }
 
 // Fail 业务失败响应
-func (api *Api) Fail(c *gin.Context, code int, message string, data ...any) {
+func (api *Api) Fail(c *gin.Context, code int, message string, data ...interface{}) {
 	response := r.Resp()
 	if data != nil {
 		response.WithData(data[0]).FailCode(c, code, message)

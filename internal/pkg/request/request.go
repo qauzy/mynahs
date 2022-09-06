@@ -8,22 +8,22 @@ import (
 	"net/http"
 )
 
-func GetQueryParams(c *gin.Context) map[string]any {
+func GetQueryParams(c *gin.Context) map[string]interface{} {
 	query := c.Request.URL.Query()
-	var queryMap = make(map[string]any, len(query))
+	var queryMap = make(map[string]interface{}, len(query))
 	for k := range query {
 		queryMap[k] = c.Query(k)
 	}
 	return queryMap
 }
 
-func GetPostFormParams(c *gin.Context) (map[string]any, error) {
+func GetPostFormParams(c *gin.Context) (map[string]interface{}, error) {
 	if err := c.Request.ParseMultipartForm(32 << 20); err != nil {
 		if !errors.Is(err, http.ErrNotMultipart) {
 			return nil, err
 		}
 	}
-	var postMap = make(map[string]any, len(c.Request.PostForm))
+	var postMap = make(map[string]interface{}, len(c.Request.PostForm))
 	for k, v := range c.Request.PostForm {
 		if len(v) > 1 {
 			postMap[k] = v
