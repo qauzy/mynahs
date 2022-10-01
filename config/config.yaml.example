@@ -36,3 +36,16 @@ logger:
     max_backups: 15
     max_age: 15
     compress: false
+
+CREATE TABLE `goods` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `goods_name` varchar(128) DEFAULT NULL,
+  `barcode` varchar(128) DEFAULT '',
+  `brand` varchar(256) DEFAULT '',
+  `price` varchar(16) DEFAULT '',
+  `spec` varchar(256) DEFAULT '',
+  `supplier` varchar(256) DEFAULT '',
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

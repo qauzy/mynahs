@@ -14,7 +14,7 @@ import (
 func init() {
 	var (
 		configPath   string
-		printVersion bool
+		printVersion bool = true
 	)
 
 	flag.StringVar(&configPath, "c", "", "请输入配置文件绝对路径")

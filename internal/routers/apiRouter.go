@@ -25,6 +25,10 @@ func setApiRoute(r *gin.Engine) {
 		demo := controllerV1.NewDemoController()
 		v1.GET("/hello-world", demo.HelloWorld)
 
+		goods := controllerV1.NewGoodsController()
+		v1.GET("/goods", goods.Check)
+		v1.POST("/goods/list", goods.List)
+
 		wsGroup := v1.Group("/ws")
 		{
 			wsGroup.GET("/:channel", ws.WebsocketManager.WsClient)
