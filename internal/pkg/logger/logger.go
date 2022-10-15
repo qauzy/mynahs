@@ -3,7 +3,7 @@ package logger
 import (
 	rotatelogs "github.com/lestrrat-go/file-rotatelogs"
 	"github.com/natefinch/lumberjack"
-	"github.com/zzpu/mynahs/config"
+	"github.com/qauzy/mynahs/config"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 	"io"

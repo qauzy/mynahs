@@ -1,7 +1,7 @@
 package data
 
 import (
-	c "github.com/zzpu/mynahs/config"
+	c "github.com/qauzy/mynahs/config"
 	"sync"
 )
 

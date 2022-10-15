@@ -3,11 +3,11 @@ package boot
 import (
 	"flag"
 	"fmt"
-	"github.com/zzpu/mynahs/config"
-	"github.com/zzpu/mynahs/data"
-	"github.com/zzpu/mynahs/internal/pkg/logger"
-	"github.com/zzpu/mynahs/internal/routers"
-	"github.com/zzpu/mynahs/internal/validator"
+	"github.com/qauzy/mynahs/config"
+	"github.com/qauzy/mynahs/data"
+	"github.com/qauzy/mynahs/internal/pkg/logger"
+	"github.com/qauzy/mynahs/internal/routers"
+	"github.com/qauzy/mynahs/internal/validator"
 	"os"
 )
 

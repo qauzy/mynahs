@@ -2,8 +2,8 @@ package data
 
 import (
 	"fmt"
-	c "github.com/zzpu/mynahs/config"
-	log "github.com/zzpu/mynahs/internal/pkg/logger"
+	c "github.com/qauzy/mynahs/config"
+	log "github.com/qauzy/mynahs/internal/pkg/logger"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"

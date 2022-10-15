@@ -2,8 +2,8 @@ package service
 
 import (
 	"encoding/json"
-	"github.com/zzpu/mynahs/internal/model"
-	"github.com/zzpu/mynahs/internal/pkg/errors"
+	"github.com/qauzy/mynahs/internal/model"
+	"github.com/qauzy/mynahs/internal/pkg/errors"
 	"io"
 	"net/http"
 )

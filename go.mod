@@ -1,4 +1,4 @@
-module github.com/zzpu/mynahs
+module github.com/qauzy/mynahs
 
 go 1.18
 

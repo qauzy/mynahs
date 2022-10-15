@@ -3,8 +3,8 @@ package middleware
 import (
 	"bytes"
 	"github.com/gin-gonic/gin"
-	"github.com/zzpu/mynahs/config"
-	log "github.com/zzpu/mynahs/internal/pkg/logger"
+	"github.com/qauzy/mynahs/config"
+	log "github.com/qauzy/mynahs/internal/pkg/logger"
 	"go.uber.org/zap"
 	"time"
 )

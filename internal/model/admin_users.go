@@ -1,7 +1,7 @@
 package model
 
 import (
-	"github.com/zzpu/mynahs/internal/pkg/utils"
+	"github.com/qauzy/mynahs/internal/pkg/utils"
 	"golang.org/x/crypto/bcrypt"
 	"gorm.io/plugin/soft_delete"
 )

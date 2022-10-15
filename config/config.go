@@ -1,8 +1,8 @@
 package config
 
 import (
-	. "github.com/zzpu/mynahs/config/autoload"
-	"github.com/zzpu/mynahs/pkg/utils"
+	. "github.com/qauzy/mynahs/config/autoload"
+	"github.com/qauzy/mynahs/pkg/utils"
 	"gopkg.in/ini.v1"
 	"gopkg.in/yaml.v3"
 	"io"

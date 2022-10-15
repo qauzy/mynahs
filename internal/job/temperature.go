@@ -2,8 +2,8 @@ package job
 
 import (
 	"fmt"
+	"github.com/qauzy/mynahs/internal/controller/v1/ws"
 	"github.com/robfig/cron/v3"
-	"github.com/zzpu/mynahs/internal/controller/v1/ws"
 	"time"
 )
 

@@ -2,10 +2,10 @@ package routers
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/zzpu/mynahs/config"
-	"github.com/zzpu/mynahs/internal/middleware"
-	"github.com/zzpu/mynahs/internal/pkg/errors"
-	response2 "github.com/zzpu/mynahs/internal/pkg/response"
+	"github.com/qauzy/mynahs/config"
+	"github.com/qauzy/mynahs/internal/middleware"
+	"github.com/qauzy/mynahs/internal/pkg/errors"
+	response2 "github.com/qauzy/mynahs/internal/pkg/response"
 	"io/ioutil"
 	"net/http"
 )

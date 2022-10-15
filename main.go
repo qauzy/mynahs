@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/zzpu/mynahs/boot"
-	_ "github.com/zzpu/mynahs/internal/job"
+	"github.com/qauzy/mynahs/boot"
+	_ "github.com/qauzy/mynahs/internal/job"
 )
 
 func main() {

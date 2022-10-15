@@ -1,8 +1,8 @@
 package model
 
 import (
-	"github.com/zzpu/mynahs/data"
-	"github.com/zzpu/mynahs/internal/pkg/utils"
+	"github.com/qauzy/mynahs/data"
+	"github.com/qauzy/mynahs/internal/pkg/utils"
 	"gorm.io/gorm"
 	"gorm.io/plugin/soft_delete"
 )

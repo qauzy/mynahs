@@ -3,7 +3,7 @@ package errors
 import (
 	"errors"
 	"fmt"
-	c "github.com/zzpu/mynahs/config"
+	c "github.com/qauzy/mynahs/config"
 )
 
 type BusinessError struct {

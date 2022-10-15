@@ -3,7 +3,7 @@ package v1
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"github.com/zzpu/mynahs/internal/controller"
+	"github.com/qauzy/mynahs/internal/controller"
 )
 
 type DemoController struct {

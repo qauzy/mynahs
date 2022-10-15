@@ -2,8 +2,8 @@ package response
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/zzpu/mynahs/config"
-	"github.com/zzpu/mynahs/internal/pkg/errors"
+	"github.com/qauzy/mynahs/config"
+	"github.com/qauzy/mynahs/internal/pkg/errors"
 	"net/http"
 	"time"
 )

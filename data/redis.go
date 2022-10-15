@@ -3,7 +3,7 @@ package data
 import (
 	"context"
 	"github.com/go-redis/redis/v8"
-	c "github.com/zzpu/mynahs/config"
+	c "github.com/qauzy/mynahs/config"
 )
 
 var Rdb *redis.Client

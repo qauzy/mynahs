@@ -2,8 +2,8 @@ package routers
 
 import (
 	"github.com/gin-gonic/gin"
-	controllerV1 "github.com/zzpu/mynahs/internal/controller/v1"
-	"github.com/zzpu/mynahs/internal/controller/v1/ws"
+	controllerV1 "github.com/qauzy/mynahs/internal/controller/v1"
+	"github.com/qauzy/mynahs/internal/controller/v1/ws"
 )
 
 func setApiRoute(r *gin.Engine) {

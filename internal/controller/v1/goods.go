@@ -2,11 +2,11 @@ package v1
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/zzpu/mynahs/internal/controller"
-	"github.com/zzpu/mynahs/internal/model"
-	"github.com/zzpu/mynahs/internal/pkg/errors"
-	log "github.com/zzpu/mynahs/internal/pkg/logger"
-	"github.com/zzpu/mynahs/internal/service"
+	"github.com/qauzy/mynahs/internal/controller"
+	"github.com/qauzy/mynahs/internal/model"
+	"github.com/qauzy/mynahs/internal/pkg/errors"
+	log "github.com/qauzy/mynahs/internal/pkg/logger"
+	"github.com/qauzy/mynahs/internal/service"
 	"go.uber.org/zap"
 	"strconv"
 )

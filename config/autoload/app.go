@@ -1,8 +1,8 @@
 package autoload
 
 import (
-	"github.com/zzpu/mynahs/pkg/convert"
-	"github.com/zzpu/mynahs/pkg/utils"
+	"github.com/qauzy/mynahs/pkg/convert"
+	"github.com/qauzy/mynahs/pkg/utils"
 )
 
 type AppConfig struct {

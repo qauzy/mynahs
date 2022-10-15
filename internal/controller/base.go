@@ -2,9 +2,9 @@ package controller
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/zzpu/mynahs/internal/pkg/errors"
-	log "github.com/zzpu/mynahs/internal/pkg/logger"
-	r "github.com/zzpu/mynahs/internal/pkg/response"
+	"github.com/qauzy/mynahs/internal/pkg/errors"
+	log "github.com/qauzy/mynahs/internal/pkg/logger"
+	r "github.com/qauzy/mynahs/internal/pkg/response"
 	"go.uber.org/zap"
 )
 

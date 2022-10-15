@@ -1,9 +1,9 @@
 # mynahs 
-[![Go](https://github.com/zzpu/mynahs/actions/workflows/go.yml/badge.svg)](https://github.com/zzpu/mynahs/actions/workflows/go.yml)
-[![CodeQL](https://github.com/zzpu/mynahs/actions/workflows/codeql.yml/badge.svg)](https://github.com/zzpu/mynahs/actions/workflows/codeql.yml)
-[![Sync to Gitee](https://github.com/zzpu/mynahs/actions/workflows/gitee-sync.yml/badge.svg?branch=master)](https://github.com/zzpu/mynahs/actions/workflows/gitee-sync.yml)
-[![Go Report Card](https://goreportcard.com/badge/github.com/zzpu/mynahs)](https://goreportcard.com/report/github.com/zzpu/mynahs)
-[![GitHub license](https://img.shields.io/github/license/zzpu/mynahs)](https://github.com/zzpu/mynahs/blob/master/LICENSE)
+[![Go](https://github.com/qauzy/mynahs/actions/workflows/go.yml/badge.svg)](https://github.com/qauzy/mynahs/actions/workflows/go.yml)
+[![CodeQL](https://github.com/qauzy/mynahs/actions/workflows/codeql.yml/badge.svg)](https://github.com/qauzy/mynahs/actions/workflows/codeql.yml)
+[![Sync to Gitee](https://github.com/qauzy/mynahs/actions/workflows/gitee-sync.yml/badge.svg?branch=master)](https://github.com/qauzy/mynahs/actions/workflows/gitee-sync.yml)
+[![Go Report Card](https://goreportcard.com/badge/github.com/qauzy/mynahs)](https://goreportcard.com/report/github.com/qauzy/mynahs)
+[![GitHub license](https://img.shields.io/github/license/qauzy/mynahs)](https://github.com/qauzy/mynahs/blob/master/LICENSE)
 
 Translations: [简体中文](README.md) | [English](README_en.md)
 ### Gin Project Template

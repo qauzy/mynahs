@@ -1,8 +1,8 @@
 package service
 
 import (
-	"github.com/zzpu/mynahs/internal/model"
-	err "github.com/zzpu/mynahs/internal/pkg/errors"
+	"github.com/qauzy/mynahs/internal/model"
+	err "github.com/qauzy/mynahs/internal/pkg/errors"
 )
 
 type AuthService struct {
