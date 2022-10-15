@@ -1,7 +1,7 @@
 package errors
 
 const (
-	SUCCESS            = 0
+	SUCCESS            = 200
 	FAILURE            = 1
 	NotFound           = 404
 	InvalidParameter   = 10000

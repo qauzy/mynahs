@@ -28,6 +28,8 @@ func setApiRoute(r *gin.Engine) {
 		goods := controllerV1.NewGoodsController()
 		v1.GET("/goods", goods.Check)
 		v1.POST("/goods/list", goods.List)
+		v1.POST("/goods/set/price", goods.UpdatePrice)
+		v1.POST("/goods/update", goods.Update)
 
 		wsGroup := v1.Group("/ws")
 		{

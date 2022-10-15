@@ -4,6 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/zzpu/mynahs/internal/controller"
 	"github.com/zzpu/mynahs/internal/model"
+	"github.com/zzpu/mynahs/internal/pkg/errors"
 	log "github.com/zzpu/mynahs/internal/pkg/logger"
 	"github.com/zzpu/mynahs/internal/service"
 	"go.uber.org/zap"
@@ -33,6 +34,42 @@ func (api *GoodsController) Check(c *gin.Context) {
 		return
 	}
 
+	api.Success(c, goods)
+}
+func (api *GoodsController) UpdatePrice(c *gin.Context) {
+	str, ok := c.GetQuery("barcode")
+	if !ok {
+		api.Fail(c, errors.InvalidParameter, "无效商品码")
+		return
+	}
+	price, ok := c.GetQuery("price")
+
+	goodsSrv := service.NewGoodsService()
+
+	err := goodsSrv.UpdatePrice(str, price)
+	if err != nil {
+		api.Err(c, err)
+		return
+	}
+
+	api.Success(c, "成功")
+}
+
+func (api *GoodsController) Update(c *gin.Context) {
+	var data model.GoodBean
+	err := c.BindJSON(&data)
+	if err != nil {
+		api.Fail(c, errors.InvalidParameter, "无效参数")
+		return
+	}
+	goodsSrv := service.NewGoodsService()
+	log.Logger.Info("position:%d,name:%s", zap.Any("Position:", data.Position), zap.Any("GoodsName:", data.GoodsName))
+	goods, err := goodsSrv.Update(&data)
+	if err != nil {
+		api.Err(c, err)
+		return
+	}
+	log.Logger.Info("position:%d,name:%s", zap.Any("Position:", goods.Position), zap.Any("spec:", goods.Spec))
 	api.Success(c, goods)
 }
 

@@ -10,6 +10,18 @@ type Goods struct {
 	Supplier  string `gorm:"column:supplier" json:"supplier"`
 }
 
+type GoodBean struct {
+	ID        uint   `json:"id"`
+	Position  uint   `json:"position"` //在列表中的位置
+	GoodsName string `json:"goodsName"`
+	Barcode   string `json:"barcode"`
+	Price     string `json:"price"`
+	Brand     string `json:"brand"`
+	Supplier  string `json:"supplier"`
+	Standard  string `json:"standard"`
+	Spec      string `json:"spec"`
+}
+
 func (Goods) TableName() string {
 	return "goods"
 }
@@ -36,33 +48,37 @@ func (u *Goods) GetGoodsList(p *Page) (list []*Goods, err error) {
 }
 
 // GetUserInfo 根据barcode获取商品信息
-func (u *Goods) GetGoods(barcode string) *Goods {
-	if err := u.DB().Where("barcode", barcode).First(u).Error; err != nil {
+func (g *Goods) GetGoods(barcode string) *Goods {
+	if err := g.DB().Where("barcode", barcode).First(g).Error; err != nil {
 		return nil
 	}
-	return u
+	return g
 }
 
 // 注册商品信息
 func (g *Goods) Register() error {
 	result := g.DB().Create(g)
+	go Goods2xlsx()
 	return result.Error
 }
 
 // 删除商品信息
 func (g *Goods) Destory() error {
 	result := g.DB().Delete(g)
+	go Goods2xlsx()
 	return result.Error
 }
 
 // 更新商品信息
-func (g *Goods) UpdatePrice(id int64, price string) error {
-	result := g.DB().Where("id = ?", id).Update("price", price)
+func (g *Goods) UpdatePrice(price string) error {
+	result := g.DB().Model(g).Where("id = ?", g.ID).Update("price", price)
+	go Goods2xlsx()
 	return result.Error
 }
 
 // 更新商品信息
 func (g *Goods) Update() error {
 	result := g.DB().Save(g)
+	go Goods2xlsx()
 	return result.Error
 }
