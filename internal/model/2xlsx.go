@@ -1,6 +1,7 @@
 package model
 
 import (
+	"github.com/qauzy/mynahs/internal/dto"
 	"github.com/tealeg/xlsx"
 	"strconv"
 )
@@ -8,7 +9,7 @@ import (
 func Goods2xlsx() {
 
 	goodsodel := NewGoods()
-	var p = &Page{
+	var p = &dto.Page{
 		Page:     0,
 		PageSize: 10000,
 	}
@@ -67,4 +68,5 @@ func Goods2xlsx() {
 	if err != nil {
 		panic(err.Error())
 	}
+
 }

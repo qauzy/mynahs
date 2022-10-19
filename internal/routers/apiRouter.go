@@ -31,6 +31,12 @@ func setApiRoute(r *gin.Engine) {
 		v1.POST("/goods/set/price", goods.UpdatePrice)
 		v1.POST("/goods/update", goods.Update)
 
+		ordersG := v1.Group("/orders")
+		ordersCtr := controllerV1.NewOrdersController()
+		{
+			ordersG.POST("/create", ordersCtr.Create)
+		}
+
 		wsGroup := v1.Group("/ws")
 		{
 			wsGroup.GET("/:channel", ws.WebsocketManager.WsClient)

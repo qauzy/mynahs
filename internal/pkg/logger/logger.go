@@ -7,6 +7,7 @@ import (
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 	"io"
+	"os"
 	"path/filepath"
 	"sync"
 	"time"
@@ -47,10 +48,19 @@ func createZapLog() *zap.Logger {
 		// 按天切割日志
 		writer = zapcore.AddSync(getRotateWriter(filename))
 	}
-
+	cores := make([]zapcore.Core, 0)
 	zapCore := zapcore.NewCore(encoder, writer, zap.InfoLevel)
+
+	cores = append(cores, zapCore)
+	console := zapcore.NewCore(
+		encoder,
+		zapcore.AddSync(os.Stdout),
+		zap.InfoLevel,
+	)
+	cores = append(cores, console)
+
 	//zap.AddStacktrace(zap.WarnLevel)
-	return zap.New(zapCore, zap.AddCaller())
+	return zap.New(zapcore.NewTee(cores...), zap.AddCaller())
 }
 
 // getRotateWriter 按日期切割日志

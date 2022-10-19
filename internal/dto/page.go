@@ -1,8 +1,8 @@
-package model
+package dto
 
 type Page struct {
-	Page     int `gorm:"column:page" json:"page"`
-	PageSize int `gorm:"column:page_size" json:"pageSize"`
+	Page     int `json:"page"`
+	PageSize int `json:"pageSize"`
 }
 
 func (p *Page) GetLimit() int {

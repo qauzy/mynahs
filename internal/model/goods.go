@@ -1,5 +1,7 @@
 package model
 
+import "github.com/qauzy/mynahs/internal/dto"
+
 type Goods struct {
 	BaseModel
 	GoodsName string `gorm:"column:goods_name" json:"goodsName"`
@@ -40,7 +42,7 @@ func NewGoodsEx(GoodsName, Barcode, Brand, Price, Spec, Supplier string) *Goods 
 		Supplier:  Supplier,
 	}
 }
-func (u *Goods) GetGoodsList(p *Page) (list []*Goods, err error) {
+func (u *Goods) GetGoodsList(p *dto.Page) (list []*Goods, err error) {
 	if err = u.DB().Offset(p.GetOffset()).Limit(p.GetLimit()).Find(&list).Error; err != nil {
 		return
 	}

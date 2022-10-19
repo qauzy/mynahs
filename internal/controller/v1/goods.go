@@ -3,6 +3,7 @@ package v1
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/qauzy/mynahs/internal/controller"
+	"github.com/qauzy/mynahs/internal/dto"
 	"github.com/qauzy/mynahs/internal/model"
 	"github.com/qauzy/mynahs/internal/pkg/errors"
 	log "github.com/qauzy/mynahs/internal/pkg/logger"
@@ -74,7 +75,7 @@ func (api *GoodsController) Update(c *gin.Context) {
 }
 
 func (api *GoodsController) List(c *gin.Context) {
-	var p model.Page
+	var p dto.Page
 	err := c.BindJSON(&p)
 	if err != nil || p.PageSize == 0 {
 		p.Page, _ = strconv.Atoi(c.Param("page"))

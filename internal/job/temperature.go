@@ -18,7 +18,7 @@ import (
 
 func init() {
 	c := cron.New()
-	EntryID, err := c.AddFunc("05 */1 * * *", func() {
+	EntryID, err := c.AddFunc("*/10 * * * *", func() {
 		ws.WebsocketManager.SendAll([]byte("clock"))
 	})
 	fmt.Println(time.Now(), EntryID, err)

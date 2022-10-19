@@ -2,6 +2,7 @@ package service
 
 import (
 	"encoding/json"
+	"github.com/qauzy/mynahs/internal/dto"
 	"github.com/qauzy/mynahs/internal/model"
 	"github.com/qauzy/mynahs/internal/pkg/errors"
 	"io"
@@ -22,7 +23,7 @@ func NewGoodsService() *GoodsService {
 }
 
 // 建立商品信息
-func (Goods *GoodsService) GoodsList(p *model.Page) (list []*model.Goods, err error) {
+func (Goods *GoodsService) GoodsList(p *dto.Page) (list []*model.Goods, err error) {
 	// 查询数据库中是否存在商品信息
 	goodsodel := model.NewGoods()
 	list, err = goodsodel.GetGoodsList(p)
